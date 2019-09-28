@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.text-box {
+    padding-bottom: 30px;
+}
+
+.text-box > * {
+    display: block;
+    padding-bottom: 10px;
+}
+
+.btn-box btn {
+    padding: 3px;
+}
