@@ -17,15 +17,14 @@ const upperAlphabet = genCharArray('A', 'Z');
 const numbers = genCharArray('0', '9');
 
 function encrypt() {
-    let message = plainText.value;
-    let step = steps.value;
-    console.log(message, step);
+    const message = plainText.value;
+    const step = parseInt(steps.value, 10);
     let encryptedMessage = '';
     for (let i=0; i<message.length; i++) {
         let value = message[i];
         let index = lowerAlphabet.indexOf(value);
         if (index > -1) {
-            value = lowerAlphabet[(index + step) % 26]
+            value = lowerAlphabet[(index + step) % 26];
         }
         index = upperAlphabet.indexOf(value);
         if (index > -1) {
@@ -37,5 +36,34 @@ function encrypt() {
         }
         encryptedMessage += value;
     }
-    return encryptedMessage;
+    textArea.innerText = encryptedMessage;
+}
+
+function decrypt() {
+    const message = plainText.value;
+    const step = parseInt(steps.value, 10);
+    let decryptedMessage = '';
+    for (let i=0; i<message.length; i++) {
+        let value = message[i];
+        let index = lowerAlphabet.indexOf(value);
+        if (index > -1) {
+            let newIndex = (index - step) % 26;
+            newIndex = (newIndex < 0) ? newIndex + 26 : newIndex;
+            value = lowerAlphabet[newIndex];
+        }
+        index = upperAlphabet.indexOf(value);
+        if (index > -1) {
+            let newIndex = (index - step) % 26;
+            newIndex = (newIndex < 0) ? newIndex + 26 : newIndex;
+            value = upperAlphabet[newIndex];
+        }
+        index = numbers.indexOf(value);
+        if (index > -1) {
+            let newIndex = (index - step) % 10;
+            newIndex = (newIndex < 0) ? newIndex + 10 : newIndex;
+            value = numbers[newIndex];
+        }
+        decryptedMessage += value;
+    }
+    textArea.innerText = decryptedMessage;
 }
