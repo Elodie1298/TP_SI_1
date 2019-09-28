@@ -1,10 +1,46 @@
-body {
+*  {
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
+html {
+    font-family: 'Roboto Mono', serif;
+}
+
+body {
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+}
+
+h1 {
+    padding: 30px;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    resize: none;
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    margin: auto;
+}
 .text-box {
-    padding-bottom: 30px;
+    width: 100%;
+    margin: 15px 0;
 }
 
 .text-box > * {
@@ -12,6 +48,19 @@ body {
     padding-bottom: 10px;
 }
 
-.btn-box btn {
-    padding: 3px;
+.btn-box {
+    width: 100%;
+    margin-bottom: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 35px;
+    margin: 15px;
+    background: #678;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #aaa;
 }
