@@ -19,6 +19,12 @@ function genCharArray(charA, charZ) {
     return a;
 }
 
+function preventError() {
+    if (steps.value < 1) {
+        steps.value = 1;
+    }
+};
+
 const lowerAlphabet = genCharArray('a', 'z');
 const upperAlphabet = genCharArray('A', 'Z');
 const numbers = genCharArray('0', '9');
