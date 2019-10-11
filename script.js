@@ -1,3 +1,12 @@
+/*
+
+    Primeiro trabalho prático SI
+    Alunos:
+
+    19164 -- Elodie Morin
+    18351 -- Rafael Ramos
+
+*/
 const plainText = document.querySelector("#Plaintext");
 const steps = document.querySelector("#Steps");
 const textArea = document.querySelector("#TextArea");
